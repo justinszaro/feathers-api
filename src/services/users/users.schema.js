@@ -8,6 +8,8 @@ import { dataValidator, queryValidator } from '../../validators.js'
 export const userSchema = Type.Object(
   {
     id: Type.Number(),
+    first_name: Type.Optional(Type.String()),
+    last_name: Type.Optional(Type.String()),
     email: Type.String(),
     password: Type.Optional(Type.String()),
     googleId: Type.Optional(Type.String()),
@@ -24,7 +26,7 @@ export const userExternalResolver = resolve({
 })
 
 // Schema for creating new entries
-export const userDataSchema = Type.Pick(userSchema, ['email', 'password', 'googleId', 'githubId'], {
+export const userDataSchema = Type.Pick(userSchema, ['first_name', 'last_name', 'email', 'password', 'googleId', 'githubId'], {
   $id: 'UserData'
 })
 export const userDataValidator = getValidator(userDataSchema, dataValidator)
