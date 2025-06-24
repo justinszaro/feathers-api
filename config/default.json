@@ -10,8 +10,14 @@
     "max": 50
   },
   "mysql": {
-    "client": "mysql",
-    "connection": "mysql://root:@localhost:3306/justinszarodotcom-api"
+    "client": "mysql2",
+    "connection": {
+      "host": "localhost",
+      "port": 3306,
+      "user": "<username>",
+      "password": "<password>",
+      "database": "<database>"
+    }
   },
   "authentication": {
     "entity": "user",
